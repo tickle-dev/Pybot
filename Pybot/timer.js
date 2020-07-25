@@ -7,6 +7,7 @@ var Two_Hour_Message = setTimeout(function(){
         sendMessage(myGuild);
     }, dayMillseconds)
 });
+return Two_Hour_Message;
 }
 function sendMessage(myGuild){
 
@@ -14,4 +15,4 @@ function sendMessage(myGuild){
     
 }
 //export {SetTimer};
-module.exports = {SetTimer: SetTimer, sendMessage: sendMessage};
+module.exports = {SetTimer: SetTimer, sendMessage: sendMessage, Two_Hour_Message: Two_Hour_Message};

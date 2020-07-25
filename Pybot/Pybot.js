@@ -3,7 +3,7 @@ const { Console } = require('console');
 const client = new discord.Client();
 
 const token = require('./Config.json').token;
-var Two_Hour_Timer = require('./timer.js').Two_Hour_Timer;
+var Two_Hour_Timer = require('./timer.js');
 const SetTimer = require('./timer.js');
 const sendMessage = require('./timer.js');
 
@@ -52,11 +52,11 @@ client.on('message', message => {
 
     if (isNaN(amount)) {
         return message.reply('that is not a number you fool!');
-    } else if (amount < 1 || amount > 100) {
-        return message.reply('you need to input a number between 1 and 100.');
+    } else if (amount < 1 || amount > 120) {
+        return message.reply('you need to input a number between 1 and 120.');
     }
-    else{
-        clearTimeout(Two_Hour_Timer);
+    else{ 
+        Two_Hour_Timer.clearTimeout(Two_Hour_Timer);
         message.reply(`You have reset the Server bump timer by: ${amount.toString()}`);
         amount = amount * 60000;
         setTimeout(function(){ 
