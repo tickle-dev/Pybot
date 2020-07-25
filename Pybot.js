@@ -18,7 +18,7 @@ client.on('ready' , () => {
     .catch(error => console.log(error));
 
     SetTimer.SetTimer(myGuild);
-
+//blah
 });
 
 client.on('guildMemberAdd', member => {
