@@ -40,6 +40,7 @@ client.on('guildMemberRemove', member => {
 });
 
 client.on('message', message => {
+    let myGuild = client.guilds.cache.get('603375508431962162');
     const prefix = '!';
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
