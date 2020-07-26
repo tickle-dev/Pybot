@@ -56,7 +56,7 @@ client.on('message', message => {
         return message.reply('you need to input a number between 1 and 120.');
     }
     else{ 
-        Two_Hour_Timer.clearTimeout(Two_Hour_Timer);
+        clearTimeout(Two_Hour_Timer);
         message.reply(`You have reset the Server bump timer by: ${amount.toString()}`);
         amount = amount * 60000;
         setTimeout(function(){ 
@@ -64,6 +64,7 @@ client.on('message', message => {
                 sendMessage.sendMessage(myGuild);
             }, amount)
         });
+        console.log(amount);
     }
 
     }

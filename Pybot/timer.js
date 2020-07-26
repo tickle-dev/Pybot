@@ -1,4 +1,4 @@
-
+var test = 'test';
 function SetTimer(myGuild){
 var Two_Hour_Message = setTimeout(function(){ 
     sendMessage(myGuild); // send the message once
@@ -15,4 +15,4 @@ function sendMessage(myGuild){
     
 }
 //export {SetTimer};
-module.exports = {SetTimer: SetTimer, sendMessage: sendMessage, Two_Hour_Message: Two_Hour_Message};
+module.exports = {SetTimer: SetTimer, sendMessage: sendMessage, Two_Hour_Message: this.Two_Hour_Message};
