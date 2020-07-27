@@ -18,6 +18,8 @@ client.on('ready' , () => {
     .catch(error => console.log(error));
 
     SetTimer.SetTimer(myGuild);
+
+    client.user.setActivity("developing the matrix");
 //blah blah
 });
 
@@ -60,7 +62,7 @@ client.on('message', message => {
         clearTimeout(Two_Hour_Timer);
         message.reply(`You have reset the Server bump timer by: ${amount.toString()}`);
         amount = amount * 60000;
-        setTimeout(function(){ 
+        var New_Timer = setTimeout(function(){ 
             setInterval(function(){
                 sendMessage.sendMessage(myGuild);
             }, amount)
@@ -68,5 +70,12 @@ client.on('message', message => {
         console.log(amount);
     }
 
+    }
+
+    if (command === 'originaltimer')
+    {
+        clearTimeout(New_Timer);
+        SetTimer.SetTimer(myGuild);
+        return message.reply('You have set the timer back to it 2 hour interval!');
     }
 });
